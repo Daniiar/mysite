@@ -10,4 +10,6 @@ Developed:
   example:
   $base_path = new mysqli("localhost", "john", "987654321", "mysite");
 
-2.Import database mysite.sql to your to your Mysql
+2.Create base in phpmyadmin with name 'mysite' and import mysite.sql to 'mysite' base
+
+3.Be carful with url in files(where header("Location: /mysite");

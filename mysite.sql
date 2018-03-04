@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Мар 04 2018 г., 06:53
+-- Время создания: Мар 04 2018 г., 10:03
 -- Версия сервера: 5.5.59-0ubuntu0.14.04.1
 -- Версия PHP: 5.5.9-1ubuntu4.23
 
@@ -27,18 +27,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `admin_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `admin_user` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `session` varchar(11) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `session` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `admin_user` (`admin_user`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Дамп данных таблицы `admin_users`
 --
 
-INSERT INTO `admin_users` (`admin_user`, `password`, `session`) VALUES
-('admin@example.com', '123456', '916a3087aa'),
-('lakiwolf.90@mail.ru', '123456', '');
+INSERT INTO `admin_users` (`id`, `admin_user`, `password`, `session`) VALUES
+(1, 'admin@example.com', '123456', '660ad29e37');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
